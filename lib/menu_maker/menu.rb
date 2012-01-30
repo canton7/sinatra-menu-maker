@@ -58,7 +58,7 @@ module MenuMaker
 				url = @url_parser ? @url_parser.call(item.url) : item.url
 				r << %Q{><a href="#{url}"}
 				r << %Q{ rel="#{item.rels.join(' ')}"} unless item.rels.empty?
-				r << "><span>#{item.title}</span>"
+				r << "><span>#{item.title}</span></a>"
 			end
 			r << (prev_depth+1).times.map{ '</li></ul>' }.join
 			r = '<ul>' << r

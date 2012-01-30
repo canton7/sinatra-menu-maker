@@ -39,7 +39,7 @@ module MenuMaker
 			@menu[options[:menu_set]].each do |item|
 				depth_change = item.depth - prev_depth
 				item_url = item.url{ |key| options[:replace][key] }
-				classes = item.classes
+				classes = item.classes.dup
 				classes << 'first' if r.empty?
 				if depth_change == 1
 					r << '<ul>'

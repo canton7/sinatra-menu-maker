@@ -17,6 +17,7 @@ module MenuMaker
 			depth = 0
 			structure.each do |menu_set, menu_items|
 				menu[menu_set] = []
+				next if menu_items.nil?
 				menu_items.each do |menu_item|
 					depth = menu_item.delete(:depth) if menu_item.has_key?(:depth)
 					menu[menu_set] << MenuItem.new(depth, menu_item.delete(:title), menu_item.delete(:url), menu_item)

@@ -22,7 +22,7 @@ module Sinatra
 
 		def self.registered(app)
 			app.helpers Helpers
-			settings.menu_maker = nil
+			app.settings.set :menu_maker, nil
 		end
 	end
 end

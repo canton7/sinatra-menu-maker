@@ -22,7 +22,7 @@ module MenuMaker
 			if external?
 				"remote-#{uri.host}#{uri.path}".gsub(/\/$/, '').gsub(/[\/\.]/, '-')
 			else
-				uri.path.gsub(/\//, '-')
+				uri.path.sub(/^\//, '').gsub(/\//, '-')
 			end
 		end
 
